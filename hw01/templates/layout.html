@@ -1,0 +1,118 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="icon" href="/static/img/favicon.png">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="/static/styles/fonts/fonts_style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header__menu left">
+            <a href="/"><img src="/static/img/logo.png" alt="logo"></a>
+            <a href="#"><img src="/static/img/b_search.png" alt="search"></a>
+        </div>
+        <!-- Место для строки поиска <div class="header menu"></div> -->
+        <div class="header__menu right">
+            <div class="main__menu">
+                <a href="#"><img src="/static/img/b_menu.png" alt="menu"></a>
+                <div class="main__menu__content">
+                    <h1>Menu</h1>
+                    <h2><a class="colored" href="/men/">Men</a></h2>
+                    <ul>
+                        <li><a href="/men/bags/">Bags</a></li>
+                        <li><a href="/men/denim/">Denim</a></li>
+                        <li><a href="/men/t-shirts/">T-Shirts</a></li>
+                    </ul>
+                    <h2><a class="colored" href="/women/">Women</a></h2>
+                    <ul>
+                        <li><a href="/women/jackets/">Jackets & Coats</a></li>
+                        <li><a href="/women/polos/">Polos</a></li>
+                        <li><a href="/women/t-shirts/">T-Shirts</a></li>
+                        <li><a href="/women/shirts/">Shirts</a></li>
+                    </ul>
+                    <h2><a class="colored" href="/kids/">Kids</a></h2>
+                    <ul>
+                        <li><a href="/kids/jackets/">Jackets & Coats</a></li>
+                        <li><a href="/kids/polos/">Polos</a></li>
+                        <li><a href="/kids/t-shirts/">T-Shirts</a></li>
+                        <li><a href="/kids/shirts/">Shirts</a></li>
+                        <li><a href="/kids/bags/">Bags</a></li>
+                    </ul>
+                    <h2><a class="colored" href="/accessories/">Accessories</a></h2>
+                </div>
+            </div>
+            <a href="#"><img src="/static/img/b_login.png" alt="login"></a>
+            <a href="#"><img src="/static/img/b_cart.png" alt="cart"></a>
+        </div>
+    </div>
+    {% if promo_image %}
+    <div class="promo">
+        <div class="promo__box-1 mobile__off"> <img src="/static/img/{{ promo_image }}.png" alt="photo"> </div>
+        <div class="promo__box-2">
+            <div class="main__title">
+                <h1>{{ promo_title }}<br />
+                    <span class="main__title__text">Luxurious</span>
+                    <span class="main__title__text colored">Fashion</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% block content %}
+        Content not found.
+    {% endblock %}
+    <div class="information__line line__large">
+        <div class="information">
+            <div class="information__box-1">
+                <a href="#"><img src="/static/img/icon_delivery.png" alt="Delivery icon"></a>
+                <h2><a href="#">Free Delivery</a></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ipsa officiis perspiciatis esse laborum accusantium, molestiae sunt nostrum corrupti enim voluptate impedit at dignissimos. Blanditiis aspernatur dolor ratione quisquam commodi.</p>
+            </div>
+            <div class="information__box-2">
+                <a href="#"><img src="/static/img/icon_sales.png" alt="Sales icon"></a>
+                <h2><a href="#">Sales & discounts</a></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sit ipsum voluptatum id, quis, quaerat minus libero blanditiis doloremque ea harum fugit aliquam delectus enim veniam unde ipsam iste incidunt?
+                </p>
+            </div>
+            <div class="information__box-3">
+                <a href="#"><img src="/static/img/icon_quality.png" alt="Quality icon"></a>
+                <h2><a href="#">Quality assurance</a></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure deleniti quidem odio architecto doloremque. Magnam maxime quo, dolorum in soluta cumque eaque possimus ea eum non, molestias consequuntur quisquam dicta!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="subscribe__line">
+        <div class="subscribe">
+            <div class="subscribe__box-1">
+                <div class="avatar"><img src="/static/img/customer.png"></div>
+                <div class="quota">
+                    <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi, <span class="italic">a
+                            pulvinar purus condimentum</span>“</p>
+                </div>
+            </div>
+            <div class="subscribe__box-2">
+                <div class="subscribe__title">
+                    <h2>Subscribe <span class="subscribe__text">for our newsletter and promotion</span></h2>
+                </div>
+                <form action="#" class="input_form">
+                    <input type="email" required placeholder="Enter Your Email" class="box_input">
+                    <button type="submit" class="input_line_button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="information__line line__small">
+        <div class="footer">
+            <div class="footer__menu">&copy;&nbsp;2022&nbsp;Brand All Rights Reserved</div>
+            <div class="footer__menu">
+                <a href="#"><img class="social-1" src="/static/img/social_1.png"></a>
+                <a href="#"><img class="social-2" src="/static/img/social_2.png"></a>
+                <a href="#"><img class="social-3" src="/static/img/social_3.png"></a>
+                <a href="#"><img class="social-4" src="/static/img/social_4.png"></a>
+            </div>
+        </div>
+    </div>
+</body>
