@@ -206,11 +206,6 @@ def check_name(name: str) -> bool:
     return isinstance(name, str) and name != '' and name != 'logout' and len(name) < 128
 
 
-@app.post('/user/')
-def user_post():
-    return ''
-
-
 @app.errorhandler(404)
 def page_not_found(e):
     context = {
