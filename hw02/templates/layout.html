@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for ('static', filename='styles/style.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename='styles/fonts/fonts_style.css') }}">
 </head>
+
 <body>
     <div class="header">
         <div class="header__menu left">
@@ -43,7 +44,7 @@
                     <h2><a class="colored" href="{{ url_for ('accessories') }}">Accessories</a></h2>
                 </div>
             </div>
-            <a href="#"><img src="{{ url_for ('static', filename='img/b_login.png') }}" alt="login"></a>
+            <a href="{{ url_for ('user') }}"><img src="{{ url_for ('static', filename='img/b_login.png') }}" alt="login"></a>
             <a href="#"><img src="{{ url_for ('static', filename='img/b_cart.png') }}" alt="cart"></a>
         </div>
     </div>
@@ -52,20 +53,14 @@
         <div class="promo__box-1 mobile__off"> <img src="{{ url_for ('static', filename='img/' + promo_image + '.png') }}" alt="photo"> </div>
         <div class="promo__box-2">
             <div class="main__title">
-                <h1>{{ promo_title }}<br />
-                    {% if not no_title_text %}
+                <h1>{{ promo_title }}<br /> {% if not no_title_text %}
                     <span class="main__title__text">Luxurious</span>
-                    <span class="main__title__text colored">Fashion</span>
-                    {% endif %}
+                    <span class="main__title__text colored">Fashion</span> {% endif %}
                 </h1>
             </div>
         </div>
     </div>
-    {% endif %}
-    {% block content %}
-        Content not found.
-    {% endblock %}
-    {% if not no_info_bar %}
+    {% endif %} {% block content %} Content not found. {% endblock %} {% if not no_info_bar %}
     <div class="information__line line__large">
         <div class="information">
             <div class="information__box-1">

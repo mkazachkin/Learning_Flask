@@ -239,7 +239,6 @@ body {
     background: url("../img/women_promo_jackets.jpg");
 }
 
-
 .bg__women__polos {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/women_promo_polos.jpg");
 }
@@ -429,6 +428,10 @@ body {
     margin: 65px 0;
 }
 
+.simple_button button {
+    margin: 35px;
+}
+
 .btn {
     color: #F26376;
     font-size: 16px;
@@ -446,6 +449,7 @@ body {
     color: #FFFFFF;
     background-color: #F26376;
     transition: all 0.2s;
+    cursor: pointer;
 }
 
 .information__line {
@@ -462,6 +466,12 @@ body {
 
 .line__small {
     padding: 15px 0;
+}
+
+.information__text {
+    display: flexbox;
+    gap: 60px;
+    margin: 0 calc((100% - 1140px)/2);
 }
 
 .information {

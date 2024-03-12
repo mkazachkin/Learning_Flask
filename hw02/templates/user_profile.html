@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block content %}
+<form action="{{ url_for ('user') }}" enctype="multipart/form-data" method="post" class="login__form">
+    <h2>Your name</h2>
+    <input name="username" type="text" required placeholder="Your name here" class="login_input" value="{{ username }}">
+    <h2>Your e-mail</h2>
+    <input name="user_email" type="email" required placeholder="Your e-mail here" class="login_input" value="{{ user_email }}">
+    <div class="simple_button">
+        <button class="btn" type="submit" name="action" value="update">
+            Update
+        </button>
+        <button class="btn" type="submit" name="action" value="logout">
+            Logout
+        </button>
+    </div>
+</form>
+{% endblock %}

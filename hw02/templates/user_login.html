@@ -1,12 +1,14 @@
-{% extends 'layout.html' %}
-{% block content %}
-    <div class="login__form">
-        <p>Please, enter your name and e-mail to register and login.</p>
-            <h2>Enter your name</h2> <input type="text" required placeholder="Your name here" class="login_input">
-            <h2>Enter your e-mail</h2><input type="email" required placeholder="Your e-mail here" class="login_input">
-                <div class="simple__button">
-                    <a href="#" class="btn">Login</a>&nbsp;
-                    <a href="#" class="btn">Register</a>
-                </div>
+{% extends 'layout.html' %} {% block content %}
+<form action="{{ url_for ('user') }}" enctype="multipart/form-data" method="post" class="login__form">
+    <p>Please, enter your name and e-mail to register and login.</p>
+    <h2>Enter your name</h2>
+    <input name="username" type="text" required placeholder="Your name here" class="login_input">
+    <h2>Enter your e-mail</h2>
+    <input name="user_email" type="email" required placeholder="Your e-mail here" class="login_input">
+    <div class="simple_button">
+        <button class="btn" type="submit">
+                Login
+            </button>
     </div>
+</form>
 {% endblock %}
