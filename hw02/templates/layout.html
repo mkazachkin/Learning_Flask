@@ -1,0 +1,126 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="icon" href="{{ url_for ('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='styles/fonts/fonts_style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="header__menu left">
+            <a href="/"><img src="{{ url_for ('static', filename='img/logo.png') }}" alt="logo"></a>
+            <a href="#"><img src="{{ url_for ('static', filename='img/b_search.png') }}" alt="search"></a>
+        </div>
+        <!-- Место для строки поиска <div class="header menu"></div> -->
+        <div class="header__menu right">
+            <div class="main__menu">
+                <a href="#"><img src="{{ url_for ('static', filename='img/b_menu.png') }}" alt="menu"></a>
+                <div class="main__menu__content">
+                    <h1>Menu</h1>
+                    <h2><a class="colored" href="{{ url_for ('men') }}">Men</a></h2>
+                    <ul>
+                        <li><a href="{{ url_for ('men_bags') }}">Bags</a></li>
+                        <li><a href="{{ url_for ('men_denim') }}">Denim</a></li>
+                        <li><a href="{{ url_for ('men_tshirts') }}">T-Shirts</a></li>
+                    </ul>
+                    <h2><a class="colored" href="{{ url_for ('women') }}">Women</a></h2>
+                    <ul>
+                        <li><a href="{{ url_for ('women_jackets') }}">Jackets & Coats</a></li>
+                        <li><a href="{{ url_for ('women_polos') }}">Polos</a></li>
+                        <li><a href="{{ url_for ('women_tshirts') }}">T-Shirts</a></li>
+                        <li><a href="{{ url_for ('women_shirts') }}">Shirts</a></li>
+                    </ul>
+                    <h2><a class="colored" href="{{ url_for ('kids') }}">Kids</a></h2>
+                    <ul>
+                        <li><a href="{{ url_for ('kids_jackets') }}">Jackets & Coats</a></li>
+                        <li><a href="{{ url_for ('kids_polos') }}">Polos</a></li>
+                        <li><a href="{{ url_for ('kids_tshirts') }}">T-Shirts</a></li>
+                        <li><a href="{{ url_for ('kids_shirts') }}">Shirts</a></li>
+                        <li><a href="{{ url_for ('men') }}">Bags</a></li>
+                    </ul>
+                    <h2><a class="colored" href="{{ url_for ('accessories') }}">Accessories</a></h2>
+                </div>
+            </div>
+            <a href="#"><img src="{{ url_for ('static', filename='img/b_login.png') }}" alt="login"></a>
+            <a href="#"><img src="{{ url_for ('static', filename='img/b_cart.png') }}" alt="cart"></a>
+        </div>
+    </div>
+    {% if promo_image %}
+    <div class="promo">
+        <div class="promo__box-1 mobile__off"> <img src="{{ url_for ('static', filename='img/' + promo_image + '.png') }}" alt="photo"> </div>
+        <div class="promo__box-2">
+            <div class="main__title">
+                <h1>{{ promo_title }}<br />
+                    {% if not no_title_text %}
+                    <span class="main__title__text">Luxurious</span>
+                    <span class="main__title__text colored">Fashion</span>
+                    {% endif %}
+                </h1>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% block content %}
+        Content not found.
+    {% endblock %}
+    {% if not no_info_bar %}
+    <div class="information__line line__large">
+        <div class="information">
+            <div class="information__box-1">
+                <a href="#"><img src="{{ url_for ('static', filename='img/icon_delivery.png') }}" alt="Delivery icon"></a>
+                <h2><a href="#">Free Delivery</a></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ipsa officiis perspiciatis esse laborum accusantium, molestiae sunt nostrum corrupti enim voluptate impedit at dignissimos. Blanditiis aspernatur dolor ratione quisquam commodi.</p>
+            </div>
+            <div class="information__box-2">
+                <a href="#"><img src="{{ url_for ('static', filename='img/icon_sales.png') }}" alt="Sales icon"></a>
+                <h2><a href="#">Sales & discounts</a></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sit ipsum voluptatum id, quis, quaerat minus libero blanditiis doloremque ea harum fugit aliquam delectus enim veniam unde ipsam iste incidunt?
+                </p>
+            </div>
+            <div class="information__box-3">
+                <a href="#"><img src="{{ url_for ('static', filename='img/icon_quality.png') }}" alt="Quality icon"></a>
+                <h2><a href="#">Quality assurance</a></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure deleniti quidem odio architecto doloremque. Magnam maxime quo, dolorum in soluta cumque eaque possimus ea eum non, molestias consequuntur quisquam dicta!
+                </p>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="information__line line__small">
+        &nbsp;
+    </div>
+    {% endif %}
+    <div class="subscribe__line">
+        <div class="subscribe">
+            <div class="subscribe__box-1">
+                <div class="avatar"><img src="{{ url_for ('static', filename='img/customer.png') }}"></div>
+                <div class="quota">
+                    <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi, <span class="italic">a
+                            pulvinar purus condimentum</span>“</p>
+                </div>
+            </div>
+            <div class="subscribe__box-2">
+                <div class="subscribe__title">
+                    <h2>Subscribe <span class="subscribe__text">for our newsletter and promotion</span></h2>
+                </div>
+                <form action="#" class="input_form">
+                    <input type="email" required placeholder="Enter Your Email" class="box_input">
+                    <button type="submit" class="input_line_button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="information__line line__small">
+        <div class="footer">
+            <div class="footer__menu">&copy;&nbsp;2022&nbsp;Brand All Rights Reserved</div>
+            <div class="footer__menu">
+                <a href="#"><img class="social-1" src="{{ url_for ('static', filename='img/social_1.png') }}"></a>
+                <a href="#"><img class="social-2" src="{{ url_for ('static', filename='img/social_2.png') }}"></a>
+                <a href="#"><img class="social-3" src="{{ url_for ('static', filename='img/social_3.png') }}"></a>
+                <a href="#"><img class="social-4" src="{{ url_for ('static', filename='img/social_4.png') }}"></a>
+            </div>
+        </div>
+    </div>
+</body>
