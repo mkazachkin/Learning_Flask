@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="offers">
+        <div class="offers__box-1 bg__women__jackets">
+            <h2>
+                <a href="{{ url_for ('women_jackets') }}">
+                    Browse<br /><span class="colored lager">Jackets & Coats</span>
+                </a>
+            </h2>
+        </div>
+        <div class="offers__box-2 bg__women__polos">
+            <h2>
+                <a href="{{ url_for ('women_polos') }}">
+                    Browse<br /><span class="colored lager">Polos</span>
+                </a>
+            </h2>
+        </div>
+        <div class="offers__box-3 bg__women__tshirts">
+            <h2>
+                <a href="{{ url_for ('women_tshirts') }}">
+                    Browse<br /><span class="colored lager">T-Shirts</span>
+                </a>
+            </h2>
+        </div>
+    </div>
+    <div class="offers">
+        <div class="offers__box-4 bg__women__shirts">
+            <h2>
+                <a href="{{ url_for ('kids_shirts') }}">
+                    Browse<br /><span class="colored lager">Shirts</span>
+                </a>
+            </h2>
+        </div>
+    </div>
+{% endblock %}

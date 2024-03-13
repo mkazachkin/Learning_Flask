@@ -1,0 +1,26 @@
+{% extends 'layout.html' %} {% block content %}
+<form action="{{ url_for ('user') }}" enctype="multipart/form-data" method="post" class="login__form">
+    {% if error_message %}
+    <div class="error_messages">
+        <p>An errors has occurred: </p>
+        <ul>
+            {% for message in error_message %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <p>Please, enter your e-mail and password to login.</p>
+    <h2>Enter your e-mail</h2>
+    <input name="user_email" type="text" required placeholder="Your e-mail here" class="login_input">
+    <h2>Enter your password</h2>
+    <input name="user_password" type="password" required placeholder="Your password here" class="login_input">
+    <div class="simple_button">
+        <button class="btn" type="submit">
+            Login
+        </button>
+        <a href="{{ url_for('user_register') }}" class="btn">Register new user</a>
+    </div>
+</form>
+
+{% endblock %}

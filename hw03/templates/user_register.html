@@ -1,0 +1,33 @@
+{% extends 'layout.html' %} {% block content %}
+<form action="{{ url_for ('user_register') }}" enctype="multipart/form-data" method="post" class="login__form">
+    {% if error_message %}
+    <div class="error_messages">
+        <p>An errors has occurred: </p>
+        <ul>
+            {% for message in error_message %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <p>Please, enter your name, e-mail and password to register.</p>
+    <h2>Enter your firstname</h2>
+    <input name="user_firstname" type="text" required placeholder="Your firstname here"
+           class="login_input" {% if user_firstname %} value="{{ user_firstname }}" {% endif %}>
+    <h2>Enter your lastname</h2>
+    <input name="user_lastname" type="text" required placeholder="Your lastname here"
+           class="login_input" {% if user_lastname %} value="{{ user_lastname }}" {% endif %}>
+    <h2>Enter your e-mail here</h2>
+    <input name="user_email" type="text" required placeholder="Your e-mail here"
+           class="login_input" {% if user_email %} value="{{ user_email }}" {% endif %}>
+    <h2>Enter your password</h2>
+    <input name="user_password1" type="password" required placeholder="Your password here" class="login_input">
+    <h2>Retype your password</h2>
+    <input name="user_password2" type="password" required placeholder="Your password here" class="login_input">
+    <div class="simple_button">
+        <button class="btn" type="submit">
+            Register
+        </button>
+    </div>
+</form>
+{% endblock %}

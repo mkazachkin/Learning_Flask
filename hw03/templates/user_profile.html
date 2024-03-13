@@ -1,0 +1,44 @@
+{% extends 'layout.html' %} {% block content %}
+<form action="{{ url_for ('user_profile', user_id=user_id) }}" enctype="multipart/form-data" method="post" class="login__form">
+    {% if error_message %}
+    <div class="error_messages">
+        <p>An errors has occurred: </p>
+        <ul>
+            {% for message in error_message %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% elif success_message %}
+    <div class="success_messages">
+        <p>{{ success_message }}</p>
+    </div>
+    {% endif %}
+    <h2>Your firstname</h2>
+    <input name="user_firstname" type="text" required placeholder="Your firstname here"
+           class="login_input" value="{{ user_firstname }}">
+    <h2>Your lastname</h2>
+    <input name="user_lastname" type="text" required placeholder="Your lastname here"
+           class="login_input" value="{{ user_lastname }}">
+    <h2>Your e-mail</h2>
+    <input name="user_email" type="email" required placeholder="Your e-mail here"
+           class="login_input" value="{{ user_email }}">
+    <h2>Enter your password</h2>
+    <input name="user_password" type="password" placeholder="Your password here"
+           class="login_input">
+    <h2>Enter your new password</h2>
+    <input name="user_password1" type="password" placeholder="Your new password here"
+           class="login_input">
+    <h2>Retype your new password</h2>
+    <input name="user_password2" type="password" placeholder="Retype new password here"
+           class="login_input">
+    <div class="simple_button">
+        <button class="btn" type="submit" name="action" value="update">
+            Update
+        </button>
+        <button class="btn" type="submit" name="action" value="logout">
+            Logout
+        </button>
+    </div>
+</form>
+{% endblock %}
